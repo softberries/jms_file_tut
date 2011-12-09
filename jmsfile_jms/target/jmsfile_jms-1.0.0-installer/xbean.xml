@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:jms="http://servicemix.apache.org/jms/1.0"
+       xmlns:test="http://test"
+       xmlns:amq="http://activemq.apache.org/schema/core"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://servicemix.apache.org/jms/1.0 http://servicemix.apache.org/schema/servicemix-jms-3.2.3.xsd
+       http://activemq.org/config/1.0 http://activemq.apache.org/schema/core/activemq-core-4.1.1.xsd
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <jms:consumer service="jmsfile:jmsservice"
+                  endpoint="jmsfile:jmsendpoint"
+              	  destinationName="test"
+              	  connectionFactory="#connectionFactory"
+		  targetService="jmsfile:fileservice"
+	          targetEndpoint="jmsfile:fileendpoint" />
+    
+    <amq:connectionFactory id="connectionFactory" brokerURL="tcp://localhost:61616" />
+
+</beans>

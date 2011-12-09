@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" version="1.0">
+  <service-assembly>
+    <identification>
+      <name>jmsfile_sa</name>
+      <description>Apache ServiceMix :: Service Assembly</description>
+    </identification>
+    <service-unit>
+      <identification>
+        <name>jmsfile_file</name>
+        <description>jmsfile_file</description>
+      </identification>
+      <target>
+        <artifacts-zip>jmsfile_file-1.0.0.zip</artifacts-zip>
+        <component-name>servicemix-file</component-name>
+      </target>
+    </service-unit>
+    <service-unit>
+      <identification>
+        <name>jmsfile_jms</name>
+        <description>jmsfile_jms</description>
+      </identification>
+      <target>
+        <artifacts-zip>jmsfile_jms-1.0.0.zip</artifacts-zip>
+        <component-name>servicemix-jms</component-name>
+      </target>
+    </service-unit>
+  </service-assembly>
+</jbi>
