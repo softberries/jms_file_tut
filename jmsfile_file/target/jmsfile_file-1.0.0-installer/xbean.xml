@@ -7,30 +7,13 @@
         http://servicemix.apache.org/file/1.0 http://servicemix.apache.org/schema/servicemix-file-2011.01.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
-    <!-- 
-        The ServiceMix File component provides integration to the file system.
-        It can be used to read and write files via URI or to periodically poll directories
-        for new files.
-        
-            http://servicemix.apache.org/servicemix-file.html
-    -->
-    <!-- BEGIN SNIPPET: file-sender -->
-    <!-- 
-        The sender endpoint creates a file from the incoming message and writes it into the specified directory.
-        
-        Attributes:
-            service                     : the endpoint service name
-            endpoint                    : the endpoint name
-            directory                   : the target directory where to write created file
-            autoCreateDirectory         : creates directory if it doesn't exist
-            append                      : append to an existing file instead of overwriting it
-            marshaler                   : implementation of the FileMarshaler to use (DefaultFileMarshaler by default)
-            tempFilePrefix              : the prefix of the temporary file used during file generation
-            tempFileSuffix              : the suffix of the temporary file used during file generation
-    -->
     <file:sender service="jmsfile:fileservice"
                  endpoint="jmsfile:fileendpoint"
                  directory="file:/home/kris/Desktop/filesfromjms" />
-    <!-- END SNIPPET: file-sender -->
-
+    
+    <file:poller service="jmsfile:fileservice"
+    			 endpoint="jmsfile:fileendpointpoller"
+    			 targetService="jmsfile:beanservice"
+    			 targetEndpoint="jmsfile:bean"
+    			 file="file:/home/kris/Desktop/filesfromjms"/>
 </beans>

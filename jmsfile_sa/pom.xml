@@ -52,5 +52,10 @@
       <artifactId>jmsfile_jms</artifactId>
       <version>1.0.0</version>
     </dependency>
+    <dependency>
+		<groupId>com.softwarepassion.jmsfile</groupId>
+  		<artifactId>jmsfile_bean</artifactId>
+  		<version>1.0.0</version>
+    </dependency>
   </dependencies>
 </project>

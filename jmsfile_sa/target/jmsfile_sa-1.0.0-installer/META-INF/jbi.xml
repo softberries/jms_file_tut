@@ -25,5 +25,15 @@
         <component-name>servicemix-jms</component-name>
       </target>
     </service-unit>
+    <service-unit>
+      <identification>
+        <name>jmsfile_bean</name>
+        <description>jmsfile_bean</description>
+      </identification>
+      <target>
+        <artifacts-zip>jmsfile_bean-1.0.0.zip</artifacts-zip>
+        <component-name>servicemix-bean</component-name>
+      </target>
+    </service-unit>
   </service-assembly>
 </jbi>

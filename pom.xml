@@ -11,5 +11,6 @@
     <module>jmsfile_file</module>
     <module>jmsfile_jms</module>
     <module>jmsfile_sa</module>
+    <module>jmsfile_bean</module>
   </modules>
 </project>
